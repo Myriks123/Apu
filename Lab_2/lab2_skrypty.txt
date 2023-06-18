@@ -1,0 +1,18 @@
+setwd("D:/R")
+#########################################################Lab_2
+install.packages("formattable")
+install.packages("DiagrammeR")
+install.packages("data.tree")
+install.packages("remotes")
+remotes::install_github("gluc/ahp")
+library(ahp)
+library(data.tree)
+library(formattable)
+library(DiagrammeR)
+ahpFile <- system.file("extdata", "sm.ahp", package="ahp")
+smAhp <- Load(ahpFile)
+print(smAhp, filterFun = isNotLeaf)
+Calculate(smAhp)
+print(smAhp, "weight")
+print(smAhp, "cena")
+#wrzucenie pliku sm.ahp na strone https://ipub.com/dev-corner/apps/ahp/

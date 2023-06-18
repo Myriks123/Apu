@@ -1,0 +1,9 @@
+#########################################################Lab_4 
+install.packages("C50")
+library("C50")
+dane <- read.csv('smartfony.csv')
+dane$ocena <- factor(dane$ocena)
+treeModel <- C5.0(x=dane[,2:4], y=dane$ocena)
+treeModel
+summary(treeModel)
+plot(treeModel)
